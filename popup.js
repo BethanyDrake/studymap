@@ -13,7 +13,6 @@ const saveFoundURL = function(savedData)
   {
     chrome.storage.sync.set({'pages':''});
   }
-
     var newPages = savedData.pages +"," +currentURL;
     console.log("saving... " + currentURL);
     chrome.storage.sync.set({'pages':newPages});
