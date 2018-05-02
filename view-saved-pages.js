@@ -1,9 +1,9 @@
 
 const saveCount = document.getElementById('saveCount');
-const updateSaveCount = function(result) {
+const displayPages = function(result) {
 
-          saveCount.textContent = result.numSaves;
-          console.log('Value currently is ' + result.numSaves);
+          saveCount.textContent = result.pages;
+          console.log('Value currently is ' + result.pages);
         };
 
 
@@ -14,4 +14,4 @@ const updateSaveCount = function(result) {
 
 
 
-chrome.storage.sync.get(null, updateSaveCount);
+chrome.storage.sync.get('pages', displayPages);

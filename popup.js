@@ -3,26 +3,38 @@ const saveButton = document.getElementById("save");
 const viewButton = document.getElementById("view");
 
 
-const initialiseNumSaves = function(savedData) {
 
-          if (!savedData.numSaves)
-          {
-            chrome.storage.sync.set({'numSaves':'0'});
-          }
-        };
+var currentURL = 'not set'
 
 
-chrome.storage.sync.get('numSaves', initialiseNumSaves)
-
-const increaseBy1 = function(savedData)
+const saveFoundURL = function(savedData)
 {
-  chrome.storage.sync.set({'numSaves':savedData.numSaves + '+1'});
-}
+  if (!savedData.pages)
+  {
+    chrome.storage.sync.set({'pages':''});
+  }
+
+    var newPages = savedData.pages +"," +currentURL;
+    console.log("saving... " + currentURL);
+    chrome.storage.sync.set({'pages':newPages});
+
+};
+
+const saveCurrentPage = function()
+{
+
+      chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+      currentURL = tabs[0].url;
+      chrome.storage.sync.get('pages', saveFoundURL);
+  });
+
+};
+
 
 saveButton.onclick = function(){
     console.log("saved!");
-    let numSaves = chrome.storage.sync.get('numSaves', increaseBy1);
-    chrome.storage.sync.set({'numSaves':numSaves});
+    saveCurrentPage();
+
   };
 
 viewButton.onclick = function(){
