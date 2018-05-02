@@ -1,0 +1,10 @@
+{
+    "name": "Study Map",
+    "description" : "Save pages for easy vocabulary lookup",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+     "default_popup": "hello.html",
+     "default_icon": "hello_extensions.png"
+   }
+  }
