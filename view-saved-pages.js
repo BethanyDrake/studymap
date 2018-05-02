@@ -2,10 +2,13 @@
 const savedPagesNode = document.getElementById('savedPages');
 
 const toLinkNode = function(linkText){
+
+  var pNode = document.createElement("p");
   var linkNode = document.createElement("a");
   linkNode.textContent = linkText;
   linkNode.href = linkText;
-  return linkNode;
+  pNode.appendChild(linkNode);
+  return pNode;
 };
 
 const toSingleNode = function(parentNode, currentNode){
