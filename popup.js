@@ -21,7 +21,6 @@ const saveFoundURL = function(savedData)
 
 const saveCurrentPage = function()
 {
-
       chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
       currentURL = tabs[0].url;
       chrome.storage.sync.get('pages', saveFoundURL);

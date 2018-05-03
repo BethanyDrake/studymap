@@ -20,12 +20,15 @@ const displayPages = function(result) {
           var splitPages = result.pages.split(',');
           splitPages.map(toLinkNode)
                     .reduce(toSingleNode, savedPagesNode);
-          // listNode.href="https://www.google.com/";
-          // savedPagesNode.textContent = result.pages;
-          // savedPagesNode.appendChild(listNode);
-          console.log('Value currently is ' + result.pages);
-          console.log(savedPagesNode);
         };
 
 
 chrome.storage.sync.get('pages', displayPages);
+
+const clearBookmarks = function(){
+  chrome.storage.sync.set({'pages':''});
+  savedPagesNode.innerHTML = '';
+
+};
+
+document.getElementById('clear').onclick=clearBookmarks;
