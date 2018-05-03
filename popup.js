@@ -1,7 +1,7 @@
 
 const saveButton = document.getElementById("save");
-const viewButton = document.getElementById("view");
-
+const viewButton = document.getElementById("viewPages");
+const wordlistButton = document.getElementById("viewWordlist");
 
 
 var currentURL = 'not set'
@@ -39,3 +39,8 @@ viewButton.onclick = function(){
     var newURL = "view-saved-pages.html";
     chrome.tabs.create({ url: newURL });
   };
+
+  wordlistButton.onclick = function(){
+    var newURL = "view-wordlist.html";
+    chrome.tabs.create({ url: newURL });
+  }
