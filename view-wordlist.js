@@ -1,9 +1,15 @@
 
 const wordlist = document.getElementById("wordlist");
+
+const getOnClickFunction = function (string){
+  return function (e){alert(string)};
+};
+
 const toListItem = function (string)
 {
    var listItem = document.createElement("li");
    listItem.innerHTML = string;
+   listItem.onclick = getOnClickFunction(string);
    return listItem;
 };
 
