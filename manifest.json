@@ -7,6 +7,19 @@
        "default_popup": "popup.html",
        "default_icon": "hello_extensions.png"
      },
+     "commands": {
+         "add_to_wordlist": {
+           "suggested_key": {
+             "default": "Ctrl+Shift+A",
+             "mac": "Command+Shift+A"
+           },
+           "description": "Adds the highlighted word to wordlist"
+         }
+      },
+      "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
      "permissions": [
             "storage",
             "tabs",

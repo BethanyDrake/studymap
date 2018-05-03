@@ -2,6 +2,8 @@
 const saveButton = document.getElementById("save");
 const viewButton = document.getElementById("viewPages");
 const wordlistButton = document.getElementById("viewWordlist");
+const addWordButton = document.getElementById("addWord");
+const textBox = document.getElementById("textBox1");
 
 
 var currentURL = 'not set'
@@ -43,4 +45,9 @@ viewButton.onclick = function(){
   wordlistButton.onclick = function(){
     var newURL = "view-wordlist.html";
     chrome.tabs.create({ url: newURL });
-  }
+  };
+
+  addWordButton.onclick = function(){
+    console.log(window.getSelection);
+    textBox.textContent = window.getSelection().toString();
+  };
