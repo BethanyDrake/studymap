@@ -94,7 +94,9 @@ const displayRelevantPages =  function(result) {
 const searchField = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 searchButton.onclick = function(){
+  savedPagesNode.innerHTML = 'searching...';
   searchQuery = searchField.value;
+
   chrome.storage.sync.get('pages', displayRelevantPages);
 
 };
