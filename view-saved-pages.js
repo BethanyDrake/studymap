@@ -1,6 +1,7 @@
 
 const savedPagesNode = document.getElementById('savedPages');
 
+
 const toLinkNode = function(linkText){
 
   var pNode = document.createElement("p");
@@ -58,7 +59,7 @@ function loadXMLDoc() {
   xhttp.send();
 };
 
-const searchQuery = 'unicorn';
+var searchQuery = 'unicorn';
 
 const containsSearchQuery = function(pageURL){
   var xhttp = new XMLHttpRequest();
@@ -88,8 +89,14 @@ const displayRelevantPages =  function(result) {
                     .reduce(toSingleNode, savedPagesNode);
         };
 
-chrome.storage.sync.get('pages', displayRelevantPages);
 
 
+const searchField = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+searchButton.onclick = function(){
+  searchQuery = searchField.value;
+  chrome.storage.sync.get('pages', displayRelevantPages);
+
+};
 
 //loadXMLDoc();
