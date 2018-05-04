@@ -3,7 +3,7 @@ var wordToAdd = window.getSelection().toString();
 console.log("word to add: " + wordToAdd);
 
 
-const saveWordToAdd = function(savedData)
+var saveWordToAdd = function(savedData)
 {
   if (!savedData.wordlist)
   {

@@ -5,7 +5,8 @@ const wordlist = document.getElementById("wordlist");
 
 const getOnClickFunction = function (listItem){
   return function (e){
-    alert(listItem.innerText);
+
+    console.log(listItem.innerText + " was clicked");
     innerList = document.createElement("ul");
     templistItem = document.createElement('li');
     templistItem.innerText = "loading...";
@@ -21,6 +22,8 @@ const getOnClickFunction = function (listItem){
 
 const toListItem = function (string)
 {
+  if (string.length <1) return null;
+  console.log("converting "+ string + " to list item");
    var listItem = document.createElement("li");
    listItem.innerText = string;
    listItem.onclick = getOnClickFunction(listItem);
@@ -29,6 +32,7 @@ const toListItem = function (string)
 
 const toList = function (list, nextListItem)
 {
+  if (!nextListItem) return list;
   list.appendChild(nextListItem);
   return list;
 };

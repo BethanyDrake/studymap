@@ -48,6 +48,7 @@ const containsSearchQuery = function(pageURL){
 };
 
 const displayRelevantPages =  function(result) {
+          console.log("displaying relevant pages for " + result);
           var splitPages = result.pages.split(',');
           whereToDisplay.innerHTML = '';
           splitPages.filter(containsSearchQuery)
