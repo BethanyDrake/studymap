@@ -14,6 +14,13 @@
              "mac": "Command+Shift+A"
            },
            "description": "Adds the highlighted word to wordlist"
+         },
+         "add_page_bookmarks": {
+           "suggested_key": {
+             "default": "Ctrl+Shift+S",
+             "mac": "Command+Shift+S"
+           },
+           "description": "Saves the current page to bookmarks"
          }
       },
       "background": {

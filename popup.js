@@ -31,11 +31,11 @@ const saveCurrentPage = function()
 };
 
 
-saveButton.onclick = function(){
-    console.log("saved!");
-    saveCurrentPage();
-
-  };
+// saveButton.onclick = function(){
+//     console.log("saved!");
+//     saveCurrentPage();
+//
+//   };
 
 viewButton.onclick = function(){
     var newURL = "view-saved-pages.html";
@@ -47,7 +47,7 @@ viewButton.onclick = function(){
     chrome.tabs.create({ url: newURL });
   };
 
-  addWordButton.onclick = function(){
-    console.log(window.getSelection);
-    textBox.textContent = window.getSelection().toString();
-  };
+  // addWordButton.onclick = function(){
+  //   console.log(window.getSelection);
+  //   textBox.textContent = window.getSelection().toString();
+  // };
