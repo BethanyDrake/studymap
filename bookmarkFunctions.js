@@ -1,6 +1,6 @@
 const toLinkNode = function(linkText){
 
-  var pNode = document.createElement("p");
+  var pNode = document.createElement("li");
   var linkNode = document.createElement("a");
   linkNode.textContent = linkText;
   linkNode.href = linkText;
@@ -49,6 +49,7 @@ const containsSearchQuery = function(pageURL){
 
 const displayRelevantPages =  function(result) {
           var splitPages = result.pages.split(',');
+          whereToDisplay.innerHTML = '';
           splitPages.filter(containsSearchQuery)
                     .map(toLinkNode)
                     .reduce(toSingleNode, whereToDisplay);
