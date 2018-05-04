@@ -1,6 +1,4 @@
-console.log("add bookmark script is running!");
 
-console.log("word to add: " + wordToAdd);
 
 
 let executeScriptCallback = function(tab){
