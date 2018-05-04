@@ -6,9 +6,15 @@ let executeScriptCallback = function(tab){
 };
 
 
-
+let unlightLogo = function()
+{
+  chrome.browserAction.setIcon({
+    path : "simpleLogo.png"
+  });
+};
 
 let addWordListener = function(command){
+
 
   console.log("command heard");
   if(command == "add_to_wordlist"){
@@ -17,6 +23,10 @@ let addWordListener = function(command){
   else{ return;}
   if (!window) alert("no window!");
 
+  chrome.browserAction.setIcon({
+    path : "logoBright.png"
+  });
+  setTimeout(unlightLogo, 2000);
 
   var details = {"file":"addword.js", "runAt":"document_end"};
 
