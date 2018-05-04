@@ -13,6 +13,14 @@ let unlightLogo = function()
   });
 };
 
+let highlightLogo = function()
+{
+  chrome.browserAction.setIcon({
+    path : "logoBright.png"
+  });
+  setTimeout(unlightLogo, 2000);
+};
+
 let addWordListener = function(command){
 
 
@@ -23,10 +31,7 @@ let addWordListener = function(command){
   else{ return;}
   if (!window) alert("no window!");
 
-  chrome.browserAction.setIcon({
-    path : "logoBright.png"
-  });
-  setTimeout(unlightLogo, 2000);
+  highlightLogo();
 
   var details = {"file":"addword.js", "runAt":"document_end"};
 
@@ -41,6 +46,7 @@ let addBookmarkListener = function(command){
   }
   else{ return;}
   if (!window) alert("no window!");
+  highlightLogo();
 
   var details = {"file":"addBookmark.js", "runAt":"document_end"};
 
