@@ -53,3 +53,10 @@ const displayWordlist = function(savedData)
 
 };
 chrome.storage.sync.get('wordlist', displayWordlist);
+
+const clearWordlist = function(){
+  chrome.storage.sync.set({'wordlist':''});
+  chrome.storage.sync.get('wordlist', displayWordlist);
+
+};
+document.getElementById('clear').onclick=clearWordlist;
